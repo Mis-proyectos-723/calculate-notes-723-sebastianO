@@ -6,15 +6,15 @@ const data3 = document.getElementById ('note3');
 const btnCalculate = document.getElementById('btn-calculate');
 const btnPredict = document.getElementById ('btn-predict');
 const response = document.getElementById('response');
-
+btnPredict.addEventListener ('click', predictNote)
 btnCalculate.addEventListener('click', calculateNote )
 
 function calculateNote(event) {
-
     let user = userName.value
     let note1 = Number(data1.value);
     let note2 = Number(data2.value);
     let note3 = Number(data3.value);
+   
 
     let result = (note1 * 0.3) + (note2  * 0.3) + (note3  * 0.4) ;
 
@@ -44,3 +44,13 @@ function calculateNote(event) {
     
 }
 
+function predictNote(event) {
+    let user = userName.value
+    let notaMin = 3.5;
+    let note1 = Number(data1.value);
+    let note2 = Number(data2.value);
+    let operation = (notaMin - (note1 * 0.3) - (note2 * 0.3) ) / 4;
+
+    alert ( operation + user)
+    event.preventDefault()
+}
