@@ -22,14 +22,14 @@ function calculateNote(event) {
 
         if(result < 3.5){
             response.style.color = 'black'
-            response.textContent = `Sr ${user}  su nota es de: ${result}`;
+            response.textContent = `Sr ${user} perdio :( su nota es de: ${result} `;
 
         }else if(result >= 3.5 && result <= 4.5 ){
             response.style.color = 'orange'
-            response.textContent = `Sr ${user}  su nota es de: ${result}`;
+            response.textContent = `Sr ${user} paso su nota es de: ${result}`;
         }else{
             response.style.color = 'green'
-            response.textContent = `Sr ${user}  su nota es de: ${result}`;
+            response.textContent = `Sr ${user},  excelente su nota es de: ${result}`;
         }
 
     
@@ -46,11 +46,14 @@ function calculateNote(event) {
 
 function predictNote(event) {
     let user = userName.value
-    let notaMin = 3.5;
     let note1 = Number(data1.value);
     let note2 = Number(data2.value);
-    let operation = (notaMin - (note1 * 0.3) - (note2 * 0.3) ) / 4;
+    let notaMin = 3.5;
+    
 
-    alert ( operation + user)
+    let operation = (notaMin - (note1 * 0.3) - (note2 * 0.3)) / 0.4;
+    data3.value = operation;
+    alert(`sr ${user} nota minima debe ser de ${operation}`);
+    
     event.preventDefault()
 }
