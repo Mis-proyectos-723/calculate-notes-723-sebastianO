@@ -36,7 +36,7 @@ function calculateNote(event) {
     event.preventDefault()
 
     }else{
-        response.textContent = `Ingrese notas validas`
+        response.textContent = `Ingrese notas validas entre (0 - gi5)`
         event.preventDefault()
     }
    
